@@ -14,7 +14,6 @@ var getNotes = function() {
     url: "/api/notes",
     method: "GET"
   });
-  location.reload(true);
 };
 
 // A function for saving a note to the db
@@ -24,7 +23,6 @@ var saveNote = function(note) {
     data: note,
     method: "POST"
   });
-  location.reload(true);
 };
 
 // A function for deleting a note from the db
@@ -33,7 +31,6 @@ var deleteNote = function(id) {
     url: "api/notes/" + id,
     method: "DELETE"
   });
-  location.reload(true);
 };
 
 // If there is an activeNote, display it, otherwise render empty inputs
@@ -64,6 +61,7 @@ var handleNoteSave = function() {
     getAndRenderNotes();
     renderActiveNote();
   });
+
 };
 
 // Delete the clicked note
@@ -85,18 +83,21 @@ var handleNoteDelete = function(event) {
     getAndRenderNotes();
     renderActiveNote();
   });
+
 };
 
 // Sets the activeNote and displays it
 var handleNoteView = function() {
   activeNote = $(this).data();
   renderActiveNote();
+
 };
 
 // Sets the activeNote to and empty object and allows the user to enter a new note
 var handleNewNoteView = function() {
   activeNote = {};
   renderActiveNote();
+
 };
 
 // If a note's title or text are empty, hide the save button
@@ -129,6 +130,7 @@ var renderNoteList = function(notes) {
   }
 
   $noteList.append(noteListItems);
+
 };
 
 // Gets notes from the db and renders them to the sidebar
@@ -136,6 +138,7 @@ var getAndRenderNotes = function() {
   return getNotes().then(function(data) {
     renderNoteList(data);
   });
+  
 };
 
 $saveNoteBtn.on("click", handleNoteSave);
