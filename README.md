@@ -11,7 +11,7 @@ Application allow users to view previously saved notes.
 
 Application allow users to delete previously saved notes.
 
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+![Alt Text](https://github.com/Zerrtry/11Homework/blob/master/public/assets/images/ezgif.com-gif-maker.gif)
 
 ## Technologies
 For this homework were used next:
