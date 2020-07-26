@@ -14,6 +14,7 @@ var getNotes = function() {
     url: "/api/notes",
     method: "GET"
   });
+  location.reload(true);
 };
 
 // A function for saving a note to the db
@@ -23,6 +24,7 @@ var saveNote = function(note) {
     data: note,
     method: "POST"
   });
+  location.reload(true);
 };
 
 // A function for deleting a note from the db
@@ -31,6 +33,7 @@ var deleteNote = function(id) {
     url: "api/notes/" + id,
     method: "DELETE"
   });
+  location.reload(true);
 };
 
 // If there is an activeNote, display it, otherwise render empty inputs
